@@ -10,9 +10,12 @@ require __DIR__ . "/includes/header.php";
 
     <label>Coche De interés:</label>
     <input type="text" name="coche" required>
-    
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
     <label>Mensaje:</label>
-    <textarea name="mensaje" rows="3" required></textarea>
+    <textarea name="mensaje" rows="4" required></textarea>
     
     <button type="submit">Solicitar Asesoramiento</button>
 </form>
