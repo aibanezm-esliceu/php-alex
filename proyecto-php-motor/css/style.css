@@ -1,58 +1,57 @@
-/* CSS */
 /* --- RESET BÁSICO --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: 'Courier New', Courier, monospace; /* Fuente retro */
+    background-color: #ffdeeb; /* Rosa palo de fondo */
+    color: #000; display: flex; flex-direction: column; min-height: 100vh;
 }
 
-header { background: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-header .logo { color: #333; font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; }
-nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
-nav a { color: #555; text-decoration: none; font-weight: 600; padding-bottom: 5px; transition: 0.3s; }
-nav a:hover { color: #e74c3c; border-bottom: 2px solid #e74c3c; }
+/* --- CABECERA Y MENÚ --- */
+header { background-color: #ffff00; border-bottom: 4px solid #000; }
+nav ul { list-style: none; display: flex; justify-content: flex-start; gap: 0; padding: 0; border-bottom: 4px solid #000; }
+nav a {
+    display: block; color: #000; text-decoration: none; font-weight: 900; font-size: 1.2rem;
+    padding: 15px 25px; border-right: 4px solid #000; text-transform: uppercase;
+}
+nav a:hover { background-color: #000; color: #ffff00; }
 
 /* --- CONTENEDOR PRINCIPAL --- */
 main {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    flex-grow: 1; /* Empuja el footer hacia abajo */
-    width: 90%;
+    max-width: 900px; margin: 50px auto; padding: 40px;
+    background-color: #fff; border: 4px solid #000;
+    box-shadow: 12px 12px 0px #000; /* Sombra dura de cómic */
+    flex-grow: 1; width: 90%;
 }
+h1 { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 20px; background-color: #00ff00; display: inline-block; padding: 5px 15px; border: 4px solid #000; }
+p { font-size: 1.1rem; font-weight: bold; margin-bottom: 30px; }
 
-h1 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-/* Estilos para la Galería Dinámica */
-.galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 1rem;
-    margin-top: 20px;
-}
-
+/* --- GALERÍA --- */
+.galeria-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
 .galeria-grid img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%; aspect-ratio: 1/1; object-fit: cover;
+    border: 4px solid #000; box-shadow: 6px 6px 0px #000; transition: 0.1s;
 }
+.galeria-grid img:hover { transform: translate(4px, 4px); box-shadow: 2px 2px 0px #000; } /* Efecto de presionar el botón */
 
+/* --- TABLA --- */
+table { width: 100%; border-collapse: collapse; border: 4px solid #000; margin-top: 20px; background-color: #fff; }
+th, td { padding: 15px; text-align: left; border: 4px solid #000; font-weight: bold; }
+th { background-color: #00ffff; font-size: 1.2rem; text-transform: uppercase; }
+tr:hover { background-color: #ffdeeb; }
+
+/* --- FORMULARIO --- */
+form { display: flex; flex-direction: column; gap: 20px; max-width: 500px; }
+label { font-weight: 900; font-size: 1.2rem; text-transform: uppercase; }
+input, textarea {
+    padding: 15px; border: 4px solid #000; background-color: #fff;
+    font-family: inherit; font-weight: bold; font-size: 1rem; box-shadow: 4px 4px 0px #000;
+}
+input:focus, textarea:focus { outline: none; background-color: #ffff00; }
+button {
+    padding: 15px; background-color: #ff0000; color: #fff; border: 4px solid #000;
+    font-size: 1.3rem; font-weight: 900; text-transform: uppercase; cursor: pointer; box-shadow: 6px 6px 0px #000; transition: 0.1s;
+}
+button:hover { transform: translate(4px, 4px); box-shadow: 2px 2px 0px #000; }
+
+/* --- PIE DE PÁGINA --- */
+footer { background-color: #000; color: #fff; font-weight: bold; text-align: center; padding: 20px; border-top: 4px solid #000; }

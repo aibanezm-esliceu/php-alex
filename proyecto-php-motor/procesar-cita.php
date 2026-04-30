@@ -8,20 +8,19 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 $nombre_cliente = $_POST["nombre"] ?? "";
 $email = $_POST["email"] ?? "";
 $coche_interes = $_POST["coche"] ?? "";
-$mensaje = $_POST["mensaje"] ?? "";
 
 require __DIR__ . "/db.php";
 
 try {
-    $sql = "INSERT INTO citas_taller (nombre, email, coche, mensaje) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO citas_taller (nombre, email, coche) VALUES (?, ?, ?)";
     $stmt = $pdo->prepare($sql);
-    $result = $stmt->execute([$nombre_cliente, $email, $coche_interes, $missatge]);
+    $result = $stmt->execute([$nombre_cliente, $email, $coche_interes]);
 
     if ($result) {
         $pageTitle = "Éxito"; 
         require __DIR__ . "/includes/header.php";
         echo "<h1>¡Mensaje enviado!</h1>";
-        echo "<p>Gracias, $nom. Tu mensaje está en la base de datos.</p>";
+        echo "<p>Gracias, $nombre_cliente. Tu mensaje está en la base de datos.</p>";
         echo "<a href='contacte.php'>Volver</a>";
         require __DIR__ . "/includes/footer.php";
     }
